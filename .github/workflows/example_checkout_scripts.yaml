@@ -1,4 +1,4 @@
-name: Checkout scripts repo
+name: Example checkout scripts
 on:
   pull_request
 jobs:
