@@ -1,0 +1,14 @@
+name: Example action on push
+on:
+  push:
+    branches:
+      - main
+jobs:
+  example_push:
+    name: Example job on push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+      - name: Example step
+        run: echo "Hello Push!"

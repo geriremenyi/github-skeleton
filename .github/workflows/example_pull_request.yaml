@@ -1,0 +1,12 @@
+name: Example action on PRs
+on:
+  pull_request
+jobs:
+  example_push:
+    name: Example job on PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+      - name: Example step
+        run: echo "Hello PR!"
