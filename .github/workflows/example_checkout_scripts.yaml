@@ -1,0 +1,16 @@
+name: Checkout scripts repo
+on:
+  pull_request
+jobs:
+  scripts_nested:
+    name: Checkout repo with scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v2
+
+      - name: Checkout scripts repo
+        uses: actions/checkout@v2
+        with:
+          repository: geriremenyi/github-action-scripts
+          path: scripts
