@@ -1,0 +1,31 @@
+name: Example checkout scripts
+on:
+  pull_request
+jobs:
+  scripts_nested:
+    name: Checkout repo with scripts nested
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current
+        uses: actions/checkout@v2
+
+      - name: Add scripts nested
+        uses: actions/checkout@v2
+        with:
+          repository: geriremenyi/github-action-scripts
+          path: scripts
+  
+  scripts_side_by_side:
+    name: Checkout repo with scripts SxS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
+
+      - name: Checkout tools repo
+        uses: actions/checkout@v2
+        with:
+          repository: geriremenyi/github-action-scripts
+          path: scripts
